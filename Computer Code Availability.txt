@@ -1,0 +1,9 @@
+Name of Code: PyFISCHERPLOT.
+Developer: Zongyang Chen, Daming Yang.
+E-mail: damingyang@sohu.com
+Open-source license: Apache License 2.0
+Year first available: 2019
+Software Require: Microsoft Windows OS, Python 3.0 language pack, Python library Xlrd, Python library Xlsxwriter.
+Program Language: Python 3.0
+Program Size: 4.67 KB.
+Link to the open-source repository: https://github.com/DamingYANG1991/PyFISCHERPLOT
