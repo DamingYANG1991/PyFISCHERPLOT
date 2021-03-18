@@ -1,7 +1,7 @@
 ﻿# -*- coding:utf-8 -*-
 
 '''
-Name of Code: PyFISCHERPLOT. Developer: Zongyang Chen, Daming Yang. E-mail: damingyang@sohu.com. Open-source license: Apache License 2.0, Software Require: Python 3.0 language pack, Python library Xlrd, Python library Xlsxwriter.Program Language: Python 3.0. Program Size: 4.48 KB. Purpose: constructing Fischer plots using geological data.
+Name of Code: PyFISCHERPLOT. Developer: Zongyang Chen, Daming Yang. E-mail: damingyang@sohu.com. Software Require: Python 3.0 language pack, Python library Xlrd, Python library Xlsxwriter.Program Language: Python 3.0. Program Size: 4.48 KB. Purpose: constructing Fischer plots using geological data.
 '''
 
 import xlrd
@@ -30,20 +30,20 @@ class WorkBook(object):
         cols_2 = [1 if cols_1[i + 1] > cols_1[i]
                   else 0 for i in range(0, len(cols_1) - 1)]
         cols_3 = [cols_2[i + 1] - cols_2[i] for i in range(0, len(cols_2) - 1)]
-        cols_4 = [round(cols_0[i], 3)
+        cols_4 = [round(cols_0[i], 20)
                   for i in range(0, len(cols_3)) if cols_3[i] == 1]
-        cols_5 = [round(cols_4[i + 1] - cols_4[i], 3)
+        cols_5 = [round(cols_4[i + 1] - cols_4[i], 20)
                   for i in range(0, len(cols_4) - 1)]
         cols_5.reverse()
-        deep_ave = round(sum(cols_5) / len(cols_5), 3)
-        cols_6 = [round(cols_5[i] - deep_ave, 3)
+        deep_ave = round(sum(cols_5) / len(cols_5), 20)
+        cols_6 = [round(cols_5[i] - deep_ave, 20)
                   for i in range(0, len(cols_5))]
         cols_7 = []
         for i in range(0, len(cols_6)):
             if i == 0:
                 cols_7.append(cols_6[0])
             else:
-                a = round(cols_7[i - 1] + cols_6[i], 3)
+                a = round(cols_7[i - 1] + cols_6[i], 20)
                 cols_7.append(a)
         cols_7.reverse()
         del cols_4[0]
